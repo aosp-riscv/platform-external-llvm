@@ -115,6 +115,32 @@
 /* LLVM name for the native target MC init function, if available */
 #define LLVM_NATIVE_TARGETMC LLVMInitializeAArch64TargetMC
 
+#elif defined(__riscv) && (__riscv_xlen == 64)
+
+/* LLVM architecture name for the native architecture, if available */
+#define LLVM_NATIVE_ARCH Riscv64
+
+/* Host triple LLVM will be executed on */
+#define LLVM_HOST_TRIPLE "riscv64-none-linux-gnu"
+
+/* LLVM name for the native AsmParser init function, if available */
+#define LLVM_NATIVE_ASMPARSER LLVMInitializeRiscv64AsmParser
+
+/* LLVM name for the native AsmPrinter init function, if available */
+#define LLVM_NATIVE_ASMPRINTER LLVMInitializeRiscv64AsmPrinter
+
+/* LLVM name for the native Disassembler init function, if available */
+#define LLVM_NATIVE_DISASSEMBLER LLVMInitializeRiscv64Disassembler
+
+/* LLVM name for the native Target init function, if available */
+#define LLVM_NATIVE_TARGET LLVMInitializeRiscv64Target
+
+/* LLVM name for the native TargetInfo init function, if available */
+#define LLVM_NATIVE_TARGETINFO LLVMInitializeRiscv64TargetInfo
+
+/* LLVM name for the native target MC init function, if available */
+#define LLVM_NATIVE_TARGETMC LLVMInitializeRiscv64TargetMC
+
 #else
 
 #error "Unknown native architecture"
